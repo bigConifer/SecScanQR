@@ -11,7 +11,6 @@
     <!-- MainActivity-->
     <string name="title_format">Formát kódu:</string>
     <string name="title_information">Info o kóde:</string>
-    <string name="default_text_main_activity">Ťuknite na tlačidlo "Skenovať" a zoskenujete QR/čiarový kód</string>
     <string name="send_to">Zdielať s:</string>
     <string name="xzing_label">Aktivovať blesk pomocou tlačidiel na nastavenie zvuku</string>
     <string name="notice_clipoard">Skopírované do schránky</string>

@@ -12,7 +12,6 @@
     <!-- MainActivity-->
     <string name="title_format">條碼格式：</string>
     <string name="title_information">條碼資訊：</string>
-    <string name="default_text_main_activity">按下「掃描」按鈕以掃描 QR Code／條碼</string>
     <string name="send_to">分享使用：</string>
     <string name="xzing_label">使用音量鍵啟動閃光燈</string>
     <string name="notice_clipoard">已複製到剪貼簿</string>

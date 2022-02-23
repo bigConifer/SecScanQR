@@ -12,7 +12,6 @@
     <!-- MainActivity-->
     <string name="title_format">Formato do código:</string>
     <string name="title_information">Informação do código:</string>
-    <string name="default_text_main_activity">Toque no botão \"Digitalizar\" para digitalizar o QR-Code/Código de Barras</string>
     <string name="send_to">Compartilhar com:</string>
     <string name="xzing_label">Ligue a lanterna usando as teclas de volume</string>
     <string name="notice_clipoard">Copiado para a área de transferência</string>

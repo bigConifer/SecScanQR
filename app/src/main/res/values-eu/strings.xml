@@ -11,7 +11,6 @@
     <!-- MainActivity-->
     <string name="title_format">Kodearen formatua:</string>
     <string name="title_information">Kodearen informazioa:</string>
-    <string name="default_text_main_activity">Sakatu "Eskaneatu" botoia QR-kode edo barra-kode bat eskaneatzeko</string>
     <string name="send_to">Partekatu honekin:</string>
     <string name="xzing_label">Piztu ezazu linterna bolumenaren teklak erabiliz</string>
     <string name="notice_clipoard">Arbelera kopiatu da</string>

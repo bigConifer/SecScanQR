@@ -11,7 +11,6 @@
     <!-- MainActivity-->
     <string name="title_format">Formato del codice:</string>
     <string name="title_information">Informazioni sul codice:</string>
-    <string name="default_text_main_activity">Premere il pulsante \'Scansiona\' per scansionare un QR-Code/Barcode</string>
     <string name="send_to">Condividi con:</string>
     <string name="xzing_label">Attiva il flash usando il tasto del volume</string>
     <string name="notice_clipoard">Copiato negli appunti</string>

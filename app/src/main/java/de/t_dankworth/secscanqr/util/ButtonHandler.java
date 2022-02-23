@@ -9,11 +9,8 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.provider.ContactsContract;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import android.view.Gravity;
-import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,21 +30,9 @@ public class ButtonHandler {
 
     /**
      * This method resets all the information that were shown on the MainActivty
-     * @param tvInformation = TextView were the qrcode is shown
-     * @param tvFormat = TextView were the qrcode format is shown
-     * @param mLabelInformation = TextView were the qrcode headline is shown
-     * @param mLabelFormat = TextView were the qrcode format headline is shown
-     * @param buttonContainer = The Container as a LinearLayout with all the Buttons
-     * @param codeImage = The ImageVIew with the Barcode/QR-Code inside
      */
-    public static void resetScreenInformation(TextView tvInformation, TextView tvFormat, TextView mLabelInformation, TextView mLabelFormat, BottomNavigationView buttonContainer, ImageView codeImage){
-        tvInformation.setText(R.string.default_text_main_activity);
-        tvFormat.setText("");
-        tvFormat.setVisibility(View.GONE);
-        mLabelInformation.setVisibility(View.GONE);
-        mLabelFormat.setVisibility(View.GONE);
-        buttonContainer.setVisibility(View.INVISIBLE);
-        codeImage.setVisibility(View.GONE);
+    public static void resetScreenInformation(){
+        //
     }
 
     /**

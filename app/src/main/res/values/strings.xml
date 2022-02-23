@@ -12,7 +12,6 @@
     <!-- MainActivity-->
     <string name="title_format">Code format:</string>
     <string name="title_information">Code information:</string>
-    <string name="default_text_main_activity">Press on the "Scan" Button to scan a QR-Code/Barcode</string>
     <string name="send_to">Share with:</string>
     <string name="xzing_label">Activate the flashlight using the volume keys</string>
     <string name="notice_clipoard">Copied to Clipboard</string>

@@ -12,7 +12,6 @@
     <!-- MainActivity-->
     <string name="title_format">Formato de código:</string>
     <string name="title_information">Información de código:</string>
-    <string name="default_text_main_activity">Pulse el botón "Escanear" para escanear un código de QR/barras</string>
     <string name="send_to">Compartir con:</string>
     <string name="xzing_label">Activar la linterna con las teclas de volumen</string>
     <string name="notice_clipoard">Copiado al portapapeles</string>

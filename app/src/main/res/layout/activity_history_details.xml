@@ -26,7 +26,6 @@
                 android:layout_margin="10sp"
                 android:maxWidth="250sp"
                 android:maxHeight="250sp"
-                android:visibility="visible"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -39,7 +38,6 @@
                 android:textColor="?attr/textcolor"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                android:visibility="visible"
                 app:layout_constraintStart_toEndOf="@+id/resultImageHistory"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -47,10 +45,9 @@
                 android:id="@+id/tvFormatHistory"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="?attr/textcolor"
                 android:padding="10sp"
+                android:textColor="?attr/textcolor"
                 android:textSize="18sp"
-                android:visibility="visible"
                 app:layout_constraintStart_toEndOf="@+id/resultImageHistory"
                 app:layout_constraintTop_toBottomOf="@+id/labelFormatHistory" />
 
@@ -58,12 +55,11 @@
                 android:id="@+id/labelInformationHistory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="10sp"
                 android:text="@string/title_information"
                 android:textColor="?attr/textcolor"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                android:padding="10sp"
-                android:visibility="visible"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/resultImageHistory" />
@@ -75,7 +71,6 @@
                 android:padding="10sp"
                 android:textColor="?attr/textcolor"
                 android:textSize="18sp"
-                android:visibility="visible"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/labelInformationHistory" />
         </androidx.constraintlayout.widget.ConstraintLayout>

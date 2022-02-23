@@ -13,7 +13,6 @@
     <!-- MainActivity-->
     <string name="title_format">Kod Formatı:</string>
     <string name="title_information">Kod Bilgisi:</string>
-    <string name="default_text_main_activity">QR-Kod/Barkod Okumak İçin "Tara" Butonuna Basın</string>
     <string name="send_to">Bunlardan Biriyle Paylaş:</string>
     <string name="xzing_label">Ses tuşlarını kullanarak el fenerini etkin hale getirebilsiniz</string>
     <string name="notice_clipoard">Panoya Kopyalandı</string>

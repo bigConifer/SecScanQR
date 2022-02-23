@@ -13,7 +13,6 @@
     <!-- MainActivity-->
     <string name="title_format">תצורת קוד:</string>
     <string name="title_information">פרטי קוד:</string>
-    <string name="default_text_main_activity">נא ללחוץ על הכפתור „סריקה” כדי לסרוק קוד QR/ברקוד</string>
     <string name="send_to">לשתף עם:</string>
     <string name="xzing_label">ניתן להפעיל את הפנס עם לחצני עצמת השמע</string>
     <string name="notice_clipoard">הועתק ללוח הגזירים</string>

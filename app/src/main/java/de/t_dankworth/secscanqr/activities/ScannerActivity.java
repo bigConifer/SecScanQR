@@ -9,7 +9,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import androidx.annotation.NonNull;
-import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -76,7 +75,6 @@ public class ScannerActivity extends MyAppCompatActivity {
 
     private TextView mTvInformation, mTvFormat, mLabelInformation, mLabelFormat;
     private BottomNavigationView action_navigation;
-    private BottomNavigationItemView action_navigation_web_button, action_navigation_contact_button;
     private ImageView codeImage;
     private GeneralHandler generalHandler;
     Bitmap bitmap;
@@ -106,9 +104,10 @@ public class ScannerActivity extends MyAppCompatActivity {
                     copyToClipboard(mTvInformation, qrcode, activity);
                     return true;
                 case R.id.main_action_navigation_reset:
-                    resetScreenInformation(mTvInformation, mTvFormat, mLabelInformation, mLabelFormat, action_navigation, codeImage);
+                    //resetScreenInformation();
                     qrcode = "";
                     qrcodeFormat = "";
+                    finish();
                     return true;
                 case R.id.main_action_navigation_openInWeb:
                     openInWeb(qrcode, qrcodeFormat, activity);
@@ -161,8 +160,6 @@ public class ScannerActivity extends MyAppCompatActivity {
         action_navigation = (BottomNavigationView) findViewById(R.id.main_action_navigation);
         action_navigation.setLabelVisibilityMode(LabelVisibilityMode.LABEL_VISIBILITY_LABELED);
         action_navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        action_navigation_web_button = (BottomNavigationItemView) findViewById(R.id.main_action_navigation_openInWeb);
-        action_navigation_contact_button = (BottomNavigationItemView) findViewById(R.id.main_action_navigation_createContact);
 
         codeImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -185,21 +182,13 @@ public class ScannerActivity extends MyAppCompatActivity {
             if(qrcode.equals("")){
                 zxingScan();
             } else {
-                codeImage.setVisibility(View.VISIBLE);
                 showQrImage();
-                mTvFormat.setVisibility(View.VISIBLE);
-                mLabelInformation.setVisibility(View.VISIBLE);
-                mLabelFormat.setVisibility(View.VISIBLE);
                 mTvFormat.setText(qrcodeFormat);
                 mTvInformation.setText(qrcode);
-                action_navigation.setVisibility(View.VISIBLE);
-
                 if(qrcode.contains("BEGIN:VCARD") & qrcode.contains("END:VCARD")){
-                    action_navigation_web_button.setVisibility(View.GONE);
-                    action_navigation_contact_button.setVisibility(View.VISIBLE);
+                    action_navigation.getMenu().removeItem(R.id.main_action_navigation_openInWeb);
                 } else {
-                    action_navigation_contact_button.setVisibility(View.GONE);
-                    action_navigation_web_button.setVisibility(View.VISIBLE);
+                    action_navigation.getMenu().removeItem(R.id.main_action_navigation_createContact);
                 }
 
             }
@@ -252,24 +241,18 @@ public class ScannerActivity extends MyAppCompatActivity {
         if(result != null){
             if(result.getContents()==null){
                 Toast.makeText(this, getResources().getText(R.string.error_canceled_scan), Toast.LENGTH_LONG).show();
+                finish();
             } else {
                 qrcodeFormat = result.getFormatName();
                 qrcode = result.getContents();
                 if(!qrcode.equals("")){
-                    codeImage.setVisibility(View.VISIBLE);
                     showQrImage();
-                    mTvFormat.setVisibility(View.VISIBLE);
-                    mLabelInformation.setVisibility(View.VISIBLE);
-                    mLabelFormat.setVisibility(View.VISIBLE);
                     mTvFormat.setText(qrcodeFormat);
                     mTvInformation.setText(qrcode);
-                    action_navigation.setVisibility(View.VISIBLE);
                     if(qrcode.contains("BEGIN:VCARD") & qrcode.contains("END:VCARD")){
-                        action_navigation_web_button.setVisibility(View.GONE);
-                        action_navigation_contact_button.setVisibility(View.VISIBLE);
+                        action_navigation.getMenu().removeItem(R.id.main_action_navigation_openInWeb);
                     } else {
-                        action_navigation_contact_button.setVisibility(View.GONE);
-                        action_navigation_web_button.setVisibility(View.VISIBLE);
+                        action_navigation.getMenu().removeItem(R.id.main_action_navigation_createContact);
                     }
 
 
@@ -343,6 +326,7 @@ public class ScannerActivity extends MyAppCompatActivity {
             imageStream = getContentResolver().openInputStream(imageUri);
         } catch (FileNotFoundException e){
             Toast.makeText(getApplicationContext(), getResources().getText(R.string.error_file_not_found), Toast.LENGTH_LONG);
+            finish();
         }
 
         //decoding bitmap
@@ -367,15 +351,15 @@ public class ScannerActivity extends MyAppCompatActivity {
             qrcode =  result.getText();
 
             if(qrcode != null){
-                codeImage.setVisibility(View.VISIBLE);
-                mLabelFormat.setVisibility(View.VISIBLE);
-                mTvFormat.setVisibility(View.VISIBLE);
-                mTvFormat.setText(qrcodeFormat);
-                mLabelInformation.setVisibility(View.VISIBLE);
-                mTvInformation.setText(qrcode);
-                action_navigation.setVisibility(View.VISIBLE);
                 showQrImage();
-
+                mTvFormat.setText(qrcodeFormat);
+                mTvInformation.setText(qrcode);
+                if(qrcode.contains("BEGIN:VCARD") & qrcode.contains("END:VCARD")){
+                    action_navigation.getMenu().removeItem(R.id.main_action_navigation_openInWeb);
+                } else {
+                    action_navigation.getMenu().removeItem(R.id.main_action_navigation_createContact);
+                }
+                
                 //Check if history is activated
                 SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
                 String history_setting = prefs.getString("pref_history", "");
@@ -389,25 +373,23 @@ public class ScannerActivity extends MyAppCompatActivity {
                 if(auto_scan.equals("true")){
                     copyToClipboard(mTvInformation, qrcode, activity);
                 }
-
-                if(qrcode.contains("BEGIN:VCARD") & qrcode.contains("END:VCARD")){
-                    action_navigation_web_button.setVisibility(View.GONE);
-                    action_navigation_contact_button.setVisibility(View.VISIBLE);
-                } else {
-                    action_navigation_contact_button.setVisibility(View.GONE);
-                    action_navigation_web_button.setVisibility(View.VISIBLE);
-                }
+                
             } else {
                 Toast.makeText(activity, getResources().getText(R.string.error_code_not_found), Toast.LENGTH_LONG).show();
+                finish();
             }
         } catch (FormatException e) {
             Toast.makeText(activity, getResources().getText(R.string.error_code_not_found), Toast.LENGTH_LONG).show();
+            finish();
         } catch (ChecksumException e) {
             Toast.makeText(activity, getResources().getText(R.string.error_code_not_found), Toast.LENGTH_LONG).show();
+            finish();
         } catch (NotFoundException e) {
             Toast.makeText(activity, getResources().getText(R.string.error_code_not_found), Toast.LENGTH_LONG).show();
+            finish();
         } catch (ArrayIndexOutOfBoundsException e){
             Toast.makeText(activity, getResources().getText(R.string.error_code_not_found), Toast.LENGTH_LONG).show();
+            finish();
         }
     }
 }

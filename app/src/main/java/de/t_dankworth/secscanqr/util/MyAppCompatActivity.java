@@ -11,7 +11,7 @@ public abstract class MyAppCompatActivity extends AppCompatActivity {
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
-        return false;
+        return true;
     }
     
 }

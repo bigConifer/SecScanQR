@@ -12,7 +12,6 @@
     <!-- MainActivity-->
     <string name="title_format">कोड प्रारूप:</string>
     <string name="title_information">कोड जानकारी:</string>
-    <string name="default_text_main_activity">क्यूआर-कोड/बारकोड को स्कैन करने के लिए "स्कैन" बटन पर दबाएँ।</string>
     <string name="send_to">इसके साथ साझा करें:</string>
     <string name="xzing_label">वॉल्यूम कुंजियों का उपयोग करके टॉर्च को सक्रिय करें</string>
     <string name="notice_clipoard">क्लिपबोर्ड पर कॉपी किया गया</string>

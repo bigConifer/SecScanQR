@@ -13,9 +13,6 @@
     <!-- MainActivity-->
     <string name="title_format">Code Format:</string>
     <string name="title_information">Code Information:</string>
-    <string name="default_text_main_activity">
-Drücken Sie auf den "Scannen" Button, um einen QR-Code/Barcode zu scannen
-</string>
     <string name="send_to">Teilen mit:</string>
     <string name="xzing_label">Taschenlampe über die Lautstärketasten aktivieren</string>
     <string name="notice_clipoard">In Zwischenablage kopiert</string>
@@ -103,9 +100,7 @@ Drücken Sie auf den "Scannen" Button, um einen QR-Code/Barcode zu scannen
     <string name="delete_entry_history_cancel">Nein</string>
     <!-- HistoryActivity Errors-->
     <string name="error_not_in_database">Wurde nicht gefunden</string>
-    <string name="error_sqlexception">
-Dieses Format wird für die Verlaufsfunktion nicht unterstützt
-</string>
+    <string name="error_sqlexception">Dieses Format wird für die Verlaufsfunktion nicht unterstützt</string>
     <!-- HistoryDetailsActivity-->
     <string name="notice_deleted_from_database">Aus dem Verlauf gelöscht</string>
     <!-- HistoryDetailsActivity Action Navigation-->
@@ -116,21 +111,11 @@ Dieses Format wird für die Verlaufsfunktion nicht unterstützt
     <!-- AboutDialog-->
     <string name="about_dialog">Über</string>
     <string name="copyright">Copyright Notice</string>
-    <string name="github_link">
-Finde SecScanQR auf Github: https://github.com/Fr4gorSoftware/SecScanQR
-</string>
-    <string name="license">
-Diese App wurde unter den Bedingungen der GNU General Public License erstellt. Für weitere Informationen klicken Sie bitte auf den folgenden Link: https://www.gnu.org/licenses/gpl-3.0.en.html
-</string>
-    <string name="logo_designer">
-Das App-Logo wurde von s-yous erstellt: https://github.com/s-yous
-</string>
-    <string name="translator">
-Deutsche Übersetzung von Thore Dankworth: https://github.com/Fr4gorSoftware
-</string>
-    <string name="zxing_license">
-Die App verwendet die ZXING-Bibliothek, die unter der Apache 2.0-Lizenz steht. Für weitere Informationen besuchen Sie bitte den Link unten: http://www.apache.org/licenses/LICENSE-2.0
-</string>
+    <string name="github_link">Finde SecScanQR auf Github: https://github.com/Fr4gorSoftware/SecScanQR</string>
+    <string name="license">Diese App wurde unter den Bedingungen der GNU General Public License erstellt. Für weitere Informationen klicken Sie bitte auf den folgenden Link: https://www.gnu.org/licenses/gpl-3.0.en.html</string>
+    <string name="logo_designer">Das App-Logo wurde von s-yous erstellt: https://github.com/s-yous</string>
+    <string name="translator">Deutsche Übersetzung von Thore Dankworth: https://github.com/Fr4gorSoftware</string>
+    <string name="zxing_license">Die App verwendet die ZXING-Bibliothek, die unter der Apache 2.0-Lizenz steht. Für weitere Informationen besuchen Sie bitte den Link unten: http://www.apache.org/licenses/LICENSE-2.0</string>
     <!-- Strings related to Settings -->
     <string name="title_activity_settings">Einstellungen</string>
     <!-- Scanner settings -->

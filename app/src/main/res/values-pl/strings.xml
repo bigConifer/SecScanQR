@@ -12,7 +12,6 @@
     <!--  MainActivity -->
     <string name="title_format">Format kodu:</string>
     <string name="title_information">Informacje o kodzie:</string>
-    <string name="default_text_main_activity">Naciśnij przycisk \'Skanuj\', aby zeskanować kod QR/kreskowy</string>
     <string name="send_to">Udostępnij za pomocą:</string>
     <string name="xzing_label">Włącz latarkę za pomocą klawiszy głośności</string>
     <string name="notice_clipoard">Skopiowane do schowka</string>

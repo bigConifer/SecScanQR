@@ -12,7 +12,6 @@
     <!-- MainActivity-->
     <string name="title_format">Format du code :</string>
     <string name="title_information">Informations du code :</string>
-    <string name="default_text_main_activity">Appuyez sur le bouton \"Scanner\" pour scanner un QR-code ou un code-barres</string>
     <string name="send_to">Partager avec :</string>
     <string name="xzing_label">Activer la lampe de poche à l\'aide des touches de volume</string>
     <string name="notice_clipoard">Copié dans le presse-papier</string>

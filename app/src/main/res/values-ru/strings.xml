@@ -12,7 +12,6 @@
     <!-- MainActivity-->
     <string name="title_format">Формат кода:</string>
     <string name="title_information">Информация о кодах:</string>
-    <string name="default_text_main_activity">Нажмите кнопку «Сканирование» для сканирования QR-кода/штрих-кода</string>
     <string name="send_to">Поделиться с:</string>
     <string name="xzing_label">Для активации вспышки используйте клавиши регулировки громкости</string>
     <string name="notice_clipoard">Скопировано в буфер обмена</string>
