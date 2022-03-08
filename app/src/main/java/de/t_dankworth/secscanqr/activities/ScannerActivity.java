@@ -12,6 +12,9 @@ import androidx.annotation.NonNull;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.view.WindowManager;
+import android.widget.LinearLayout;
+
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -73,6 +76,7 @@ import static de.t_dankworth.secscanqr.util.ButtonHandler.shareTo;
  */
 public class ScannerActivity extends MyAppCompatActivity {
 
+    private LinearLayout scannerLayout;
     private TextView mTvInformation, mTvFormat, mLabelInformation, mLabelFormat;
     private BottomNavigationView action_navigation;
     private ImageView codeImage;
@@ -145,6 +149,9 @@ public class ScannerActivity extends MyAppCompatActivity {
         generalHandler = new GeneralHandler(this);
         generalHandler.loadTheme();
         setContentView(R.layout.activity_scanner);
+        
+        scannerLayout = (LinearLayout) findViewById(R.id.scannerLayout);
+        
         mTvInformation = (TextView) findViewById(R.id.tvTxtqrcode);
         mTvFormat = (TextView) findViewById(R.id.tvFormat);
         mLabelInformation = (TextView) findViewById(R.id.labelInformation);
@@ -204,6 +211,11 @@ public class ScannerActivity extends MyAppCompatActivity {
                     handleSendPicture();
                 }
             } else {
+                
+                scannerLayout.setVisibility(View.INVISIBLE);
+                getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+                try { getSupportActionBar().hide(); } catch(Exception e){};
+                
                 zxingScan();
             }
         }
@@ -243,6 +255,11 @@ public class ScannerActivity extends MyAppCompatActivity {
                 Toast.makeText(this, getResources().getText(R.string.error_canceled_scan), Toast.LENGTH_LONG).show();
                 finish();
             } else {
+                
+                scannerLayout.setVisibility(View.VISIBLE);
+                getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+                try { getSupportActionBar().show(); } catch(Exception e){};
+                
                 qrcodeFormat = result.getFormatName();
                 qrcode = result.getContents();
                 if(!qrcode.equals("")){
